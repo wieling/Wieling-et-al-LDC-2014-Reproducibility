@@ -1,5 +1,5 @@
-setwd('packrat')
 library(packrat)
+download.file('https://github.com/wieling/Wieling-et-al-LDC-2014-Reproducibility/blob/master/Wieling-et-al-LDC-2014-2014-09-25.tar.gz?raw=true','Wieling-et-al-LDC-2014-2014-09-25.tar.gz')
 packrat::unbundle('Wieling-et-al-LDC-2014-2014-09-25.tar.gz','.')
 setwd('Wieling-et-al-LDC-2014')
 packrat::on()

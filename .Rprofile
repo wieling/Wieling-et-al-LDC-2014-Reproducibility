@@ -1,0 +1,8 @@
+setwd('packrat')
+library(packrat)
+packrat::unbundle('Wieling-et-al-LDC-2014-2014-09-25.tar.gz','.')
+setwd('Wieling-et-al-LDC-2014')
+packrat::on()
+library(knitr)
+knit('WielingBloemMignellaEtAl-LDC-2014.Rnw')
+cat('The results have been calculated and stored in:\nWielingBloemMignellaEtAl-LDC-2014.pdf!\n')

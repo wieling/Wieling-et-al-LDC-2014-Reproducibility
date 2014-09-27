@@ -2,7 +2,7 @@
 library(datasets)
 library(utils)
 library(grDevices)
-library(graphics
+library(graphics)
 library(stats)
 library(methods)
 

@@ -6,24 +6,24 @@ library(graphics)
 library(stats)
 library(methods)
 
-# load necessary packages
+# load required packages
 library(packrat)
 library(httr)
 
 # setup R environment specific for this paper package
-pr <- GET('https://raw.github.com/wieling/Wieling-et-al-LDC-2014-Reproducibility/master/Wieling-et-al-LDC-2014-2014-09-25.tar.gz')
+pr <- GET('https://raw.github.com/wieling/Wieling-et-al-LDC-2014-Reproducibility/master/PaperPackage.tar.gz')
 
-writeBin(content(pr, "raw"),"reproducible.tar.gz")
+writeBin(content(pr, "raw"),"PaperPackage.tar.gz")
 
-packrat::unbundle('reproducible.tar.gz','.')
+packrat::unbundle('PaperPackage.tar.gz','.')
 setwd('Wieling-et-al-LDC-2014')
 packrat::on()
 
-Replicate <- function(){ 
-	library(knitr)
-	knit2pdf('WielingBloemMignellaEtAl-LDC-2014.Rnw')
-	cat('The results have been calculated and stored in:\nWielingBloemMignellaEtAl-LDC-2014.pdf!\n')
+replicate <- function(){ 
+	library(rmarkdown)
+	render('WielingBloemMignellaEtAl-LDC-2014.Rmd')
+	cat('The analysis has been replicated and can be viewed in:\nWielingBloemMignellaEtAl-LDC-2014.html!\n')
 }
 
-cat('Data and R environment restored.\nRun "Replicate()" to replicate the analysis!\n')
+cat('Data and R environment restored.\nRun "replicate()" to replicate the analysis!\n')
 

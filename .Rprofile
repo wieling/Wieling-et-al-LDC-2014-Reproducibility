@@ -19,10 +19,11 @@ packrat::unbundle('reproducible.tar.gz','.')
 setwd('Wieling-et-al-LDC-2014')
 packrat::on()
 
-cat('Data and R environment restored.\nRun "Replicate()" to replicate the analysis!\n')
-
-Replicate <- function(){
+Replicate <- function(){ 
 	library(knitr)
 	knit2pdf('WielingBloemMignellaEtAl-LDC-2014.Rnw')
 	cat('The results have been calculated and stored in:\nWielingBloemMignellaEtAl-LDC-2014.pdf!\n')
 }
+
+cat('Data and R environment restored.\nRun "Replicate()" to replicate the analysis!\n')
+
